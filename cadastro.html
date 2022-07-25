@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<?php
+
+session_start();
+
+
+?>
+
+<head>
+    <title>Aluno - Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="img/favicon.ico" rel="shortcut icon" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/themify-icons.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <link rel="stylesheet" href="css/owl.carousel.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+
+
+</head>
+
+<body style="background: linear-gradient(180deg, #38EF7D 0%, #11998E 100%);" class="d-flex justify-content-center align-items-center">
+    <section class="d-flex flex-column align-items-center justify-content-center">
+        <div class="boxmeio d-flex flex-column align-items-center justify-content-center">
+            <img class="" width="200" src="img/logotask.png">
+
+            <h3 style="color: #11998E; text-align: center; font-size: 35px !important;" class="boxtxtlogin  mb-4">Faça seu Cadastro <br></h3>
+            <h5 id="aviso" style="color: red; text-align: center; font-size: 15px !important; line-height:20px;" class="boxtxtlogin  "></h5>
+            <form class="form" id="form1">
+                <div class="d-flex flex-column">
+                    <div class="input-group mb-2 mr-sm-2 inputs ">
+                        <input id="token" style="background-color: #FAFAFA;" type="text" name="token" class="form-control radiusbutton" placeholder="Chave" required>
+                    </div>
+                    <div class="input-group mb-2 mr-sm-2  mt-2 ">
+                        <button class="buttonlgn mt-3" id="tokensubmit" type="submit">Validar Chave</button>
+                    </div>
+                    <div style="padding: 10px 20px;" class="d-flex justify-content-between text-center align-items-center">
+                        <a href="loginaluno.php">
+                            <p class="mr-5">Login</p>
+                        </a>
+                        <a href="recovery.php">
+                            <p>Esqueci login ou senha</p>
+                        </a>
+                    </div>
+                </div>
+            </form>
+            <div id="modal"></div>
+            <form class="form" id="form2" style="display:none;">
+                <div class="d-flex flex-column">
+                    <div class="input-group mb-2 mr-sm-2 inputs ">
+                        <input id="nome" style="background-color: #FAFAFA;" type="text" name="nome" class="form-control radiusbutton nomeinput" placeholder="Nome" required>
+                    </div>
+                    <div class="input-group mb-2 mr-sm-2 inputs ">
+                        <input id="sobrenome" style="background-color: #FAFAFA;" type="text" name="sobrenome" class="form-control radiusbutton sobrenome" placeholder="Sobrenome" required>
+                    </div>
+                    <div class="input-group mb-2 mr-sm-2 inputs ">
+                        <input id="cpf" style="background-color: #FAFAFA;" type="text" name="CPF" class="form-control radiusbutton cpf" placeholder="CPF" required>
+                    </div>
+                    <div class="input-group mb-2 mr-sm-2 inputs ">
+                        <input id="email" style="background-color: #FAFAFA;" type="text" name="email" class="form-control radiusbutton email" placeholder="E-mail" required>
+                    </div>
+
+                    <div class="input-group mb-2 mr-sm-2 inputs ">
+                        <input id="senha" style="background-color: #FAFAFA;" type="password" name="senha" class="form-control radiusbutton senha" placeholder="Senha" required>
+                    </div>
+                    <div class="input-group mb-2 mr-sm-2 inputs ">
+                        <input id="senha2" style="background-color: #FAFAFA;" type="password" name="senha" class="form-control radiusbutton confirmsenha" placeholder="Senha" required>
+                    </div>
+                    <div class="input-group mb-2 mr-sm-2  mt-2 ">
+                        <button class="buttonlgn mt-3" id="submit" type="submit">Cadastrar-se</button>
+                    </div>
+                    <div style="padding: 10px 20px;" class="d-flex justify-content-between text-center align-items-center">
+                        <a href="loginaluno.php">
+                            <p class="mr-5">Login</p>
+                        </a>
+                        <a href="recovery.php">
+                            <p>Esqueci login ou senha</p>
+                        </a>
+                    </div>
+
+
+
+                </div>
+            </form>
+
+
+        </div>
+        <img class="mt-4" width="300" src="img/logohorizontal.png">
+    </section>
+    <script>
+        ///validar o token
+        document.getElementById("tokensubmit").addEventListener("click", function(e) {
+            e.preventDefault();
+            document.getElementById("modal").style.display = "block";
+            var token = document.getElementById("token").value;
+            if (token.length == 0) {
+                document.getElementById("aviso").innerHTML = "Esse campo não pode estar vazio";
+            } else {
+                var dados = new FormData();
+                dados.append('token', token);
+                dados.append('passo', 1);
+
+                $.ajax({
+                    url: "process_cadastro.php",
+                    method: 'post',
+                    data: dados,
+                    contentType: false,
+                    processData: false,
+                    success: function(resposta) {
+                        console.log(resposta);
+                        document.getElementById("modal").style.display = "none";
+                        if (resposta == 200) {
+                            document.getElementById("aviso").innerHTML = "Seu Token é Válido, conclua seu Cadastro";
+                            document.getElementById("aviso").style.color = "#37ED7D";
+
+                            document.getElementById("form1").style.display = "none";
+                            document.getElementById("form2").style.display = "block";
+                        } else {
+                            document.getElementById("aviso").innerHTML = "Você não tem um token de cadastro válido!";
+                        }
+                    }
+                })
+            }
+        });
+    </script>
+    <script>
+        //Fazer o cadastro
+            document.getElementById("submit").addEventListener("click", function(e) {
+            e.preventDefault();
+            document.getElementById("modal").style.display = "block";
+            var token = document.getElementById("token").value;
+            var nome = document.getElementById("nome").value;
+            var sobrenome = document.getElementById("sobrenome").value;
+            var email = document.getElementById("email").value;
+            var cpf = document.getElementById("cpf").value;
+            var senha = document.getElementById("senha").value;
+            var senha2 = document.getElementById("senha2").value;
+            if (nome.length == 0 || sobrenome.length == 0 || email.length == 0 || cpf.length == 0 || senha == 0 || senha2 == 0) {
+                document.getElementById("aviso").style.color = "red";
+                document.getElementById("aviso").innerHTML = "Todos os campos devem ser preenchidos";
+
+            } else{
+            var dados = new FormData();
+            dados.append('token', token);
+            dados.append('nome', nome);
+            dados.append('sobrenome', sobrenome);
+            dados.append('email', email);
+            dados.append('cpf', cpf);
+            dados.append('senha', senha);
+            dados.append('passo', 2);
+
+            $.ajax({
+                url: "process_cadastro.php",
+                method: 'post',
+                data: dados,
+                contentType: false,
+                processData: false,
+                success: function(resposta) {
+                    console.log(resposta);
+                    document.getElementById("modal").style.display = "none";
+                    if (resposta == 0) {
+                        document.getElementById("aviso").innerHTML = "Essa e-mail já está vinculado a uma conta no nosso sistema";
+                    } else if (resposta == 404) {
+                        document.getElementById("aviso").innerHTML = "Não foi possível efetuar o cadastro, tente novamente";
+                    }
+                    else if (resposta == 10) {
+                        document.getElementById("aviso").innerHTML = "Token Invalido";
+                    } else if (resposta == 200) {
+                        window.location.href = "aluno.php?";
+                    }
+                }
+            })
+        }
+        });
+    </script>
+
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.8) url('https://i.imgur.com/eRcxfVt.gif') 50% 50% no-repeat;
+        }
+    </style>
+
+
+
+
+    <!--====== Javascripts & Jquery ======-->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/meu.js"></script>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

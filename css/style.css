@@ -1,0 +1,567 @@
+/* =================================
+------------------------------------
+  Cryptocurrency - Landing Page
+  Version: 1.0
+ ------------------------------------ 
+ ====================================*/
+
+
+/*----------------------------------------*/
+
+
+/* Template default CSS
+/*----------------------------------------*/
+
+
+/* Esconde o input */
+
+input[type='file'] {
+    display: none
+}
+
+
+/* Aparência que terá o seletor de arquivo */
+
+label {
+    background-color: #3498db;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+    padding: 6px 20px
+}
+
+hr {
+    background: linear-gradient(180deg, #38EF7D 0%, #11998E 100%);
+}
+
+:root {
+    --bordercard: 10px;
+}
+
+button {
+    outline-style: none !important;
+    border: none;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #11998E;
+    margin: 0;
+    font-weight: 500;
+    font-family: "Futura", sans-serif;
+}
+
+h1 {
+    font-size: 70px;
+}
+
+h2 {
+    font-size: 48px;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+h4 {
+    font-size: 24px;
+}
+
+h5 {
+    font-size: 20px;
+}
+
+h6 {
+    font-size: 14px;
+}
+
+p {
+    font-size: 15.7px;
+    color: #75849a;
+    line-height: 1.6;
+}
+
+.hero-section {
+    height: 100%;
+    background-size: cover;
+    background-color: #11998E !important;
+}
+
+.boxmeio {
+    position: relative;
+    width: 400px;
+    height: auto;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 30px 7px #11998E;
+    border-radius: 20px;
+}
+
+.boxtext {
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    width: 90.5%;
+    height: 50px;
+    left: 30px;
+    top: 30px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 56px;
+    text-align: center;
+    color: #11998E;
+}
+
+.inputs {
+    border: none;
+    position: flex;
+    width: 100%;
+    height: 55px;
+    border-radius: 15px;
+}
+
+#senha,
+#usuario {
+    height: 55px;
+}
+
+.buttonlgn {
+    cursor: pointer;
+    padding: 0 20px;
+    width: 100%;
+    height: 60px;
+    background-color: #11998E;
+    color: white;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    border-radius: 10px;
+    font-size: 22px;
+}
+
+.buttoncadastre {
+    cursor: pointer;
+    padding: 0 20px;
+    border: none;
+    width: 100%;
+    height: 60px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    background: #38EF7D;
+    border-radius: 10px;
+    color: white;
+    font-size: 22px;
+}
+
+.logo {
+    background: linear-gradient(180deg, #38EF7D 0%, #11998E 100%);
+}
+
+#senha::placeholder {
+    color: #11998E;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+}
+
+#usuario::placeholder {
+    color: #11998E;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+}
+#senha2::placeholder {
+    color: #11998E;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+}
+#cpf::placeholder {
+    color: #11998E;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+}
+
+#email::placeholder {
+    color: #11998E;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+}
+#nome::placeholder {
+    color: #11998E;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+}
+#sobrenome::placeholder {
+    color: #11998E;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+}
+
+
+@media screen and (max-width: 500px) {
+    .boxtext {
+        font-size: 36px;
+    }
+    .boxmeio {
+        width: 100%;
+    }
+}
+
+nav {
+    background: linear-gradient(90.01deg, #38EF7D -1%, #11998E 99.99%);
+    box-shadow: 6px 0px 18px rgba(0, 0, 0, 0.06);
+}
+
+.carditens {
+    border-radius: 20px;
+    margin-left: -246px;
+    top: 47px;
+    width: 270px;
+    height: auto;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 12px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px 0px 10px 10px;
+}
+
+.cardprinc {
+    word-wrap: break-word;
+    font-family: 'Roboto', sans-serif;
+    pointer-events: none;
+    color: #11998E;
+    font-weight: 700;
+    font-size: 18;
+}
+
+.cardsecond {
+    font-family: 'Roboto', sans-serif;
+    color: #7D7D7D;
+    font-weight: 400;
+    font-size: 14;
+}
+
+.cardbottom {
+    border-bottom: 2px #A7A7A7 solid;
+}
+
+.content {
+    margin-left: 380px;
+    transition: .4s;
+}
+
+.retrait {
+    transition: .4s;
+    margin-left: 0 !important;
+}
+
+.subtext {
+    color: #11998E;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400 !important;
+    font-size: 13px !important;
+}
+
+.princtext {
+    color: #11998E;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700 !important;
+    font-size: 18px !important;
+}
+
+.imgback {}
+
+.borderx {
+    border-bottom: 0.5px #11998E solid;
+    border-right: 0.5px #11998E solid;
+}
+
+.right {
+    text-align: right;
+}
+
+.video-container {
+    box-shadow: 0px 0px 20px 20px rgb(17 153 142 / 65%);
+    margin-top: 44px;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.video-container::after {
+    padding-top: 56.25%;
+    display: block;
+    content: '';
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.textaula {}
+
+.aulatxt {
+    width: 100%;
+    font-size: 36px !important;
+    font-weight: 700;
+}
+
+.aulatxtsub {
+    font-size: 30px !important;
+    font-weight: 700;
+}
+
+.boxexercicio {
+    align-items: center;
+    cursor: pointer !important;
+    outline-style: none !important;
+    border: none;
+    display: flex;
+    grid-gap: 2.5em;
+    padding: 5px 20px;
+    height: auto;
+    width: auto;
+    background: #11998E;
+    box-shadow: 0px 0px 12px 6px rgba(0, 0, 0, 0.1);
+    border-radius: var(--bordercard);
+}
+
+.boxexercicio2 {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 13px;
+    padding: 20px;
+    width: auto;
+    height: auto;
+    background: #fff;
+    box-shadow: 0px 0px 12px 6px rgba(0, 0, 0, 0.1);
+    border-radius: var(--bordercard);
+}
+
+.boxtxtlogin {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+}
+
+.boxtextsub {
+    margin-top: -30px;
+    text-align: left;
+    color: white;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400!important;
+    font-size: 18px!important;
+}
+
+.exercicioimg {
+    width: 50px;
+}
+
+.card1txt {
+    color: white;
+    font-size: 22px;
+    font-family: 'Roboto';
+    font-weight: 700;
+}
+
+.card2txt {
+    color: white;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.txt1card2 {
+    color: #11998E;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.txt2card2 {
+    color: #11998E;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.buttonsend {
+    align-self: center;
+    height: 50px;
+    border-radius: 10px;
+    text-decoration: none;
+    border: none;
+    background: linear-gradient(180deg, #38EF7D 0%, #11998E 100%);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.buttonexercicio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    color: #11998E;
+    border: none;
+    border-radius: 20px;
+    background-color: #7FFFA0;
+    width: 100%;
+    height: 50px;
+}
+
+.checkaula {
+    font-size: 24px;
+    align-items: center;
+    padding: 0px 20px;
+    color: #11998E;
+    font-weight: 400 !important;
+    white-space: nowrap;
+    cursor: pointer;
+    width: 100%;
+    height: 65px;
+    border: 1px solid #11998E;
+    border-radius: 12px !important;
+    transition: .4s;
+}
+
+.checkaula:hover {
+    transition: .4s;
+    background-color: #7fff9f8c;
+}
+
+.hov:hover {
+    transition: .4s;
+    background-color: #CBCBCB;
+}
+
+.videomask {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    align-items: center;
+    grid-template: center;
+    justify-items: center;
+    background: #000000c7;
+    z-index: 5;
+}
+
+.videotask {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    align-items: center;
+    grid-template: center;
+    justify-items: center;
+    z-index: 1;
+}
+
+
+main {
+    padding-top: 56px;
+    ;
+}
+
+.form {
+    width: 100%;
+}
+
+.input-group {
+    padding: 0 20px !important;
+}
+
+.radiusbutton {
+    border-radius: 0px 15px 15px 0px !important;
+}
+
+.radiusbutton2 {
+    border-radius: 15px 0px 0px 15px !important;
+}
+
+.text-alert {
+    flex-wrap: wrap;
+}
+
+.dropdown-item {
+    white-space: normal;
+}
+
+.btnexercicio {
+    margin-top: -6px;
+    margin-bottom: 5px;
+    color: #11998E;
+    font-weight: 700;
+    font-size: 14px;
+    text-align: center;
+}
+
+.active {
+    align-self: center;
+}
+
+#box1 {
+    margin-top: -20px !important;
+}
+
+
+label,
+textarea {
+    font-size: .8rem;
+    letter-spacing: 1px;
+}
+textarea {
+    
+    padding: 10px;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px #999;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+
+ 

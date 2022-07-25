@@ -1,0 +1,314 @@
+* {
+    font-family: Roboto;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+a:link {
+    text-decoration: none !important;
+}
+
+
+/*Reset*/
+
+body {}
+
+.navbar {
+    background-color: #11998E !important;
+    padding: 20px 60px !important;
+}
+
+.hello {
+    
+    background-color: white;
+    padding: 20px 30px !important;
+}
+.video-container {
+    margin-top: 44px;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.video-container::after {
+    padding-top: 56.25%;
+    display: block;
+    content: '';
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video{
+
+}
+
+
+.bobo {
+    display: absolute;
+    background-image: url("../img/N.svg");
+    background-repeat: no-repeat;
+    background-size: absolute;
+    background-color: white;
+    padding: 20px 30px !important;
+}
+
+
+.btn-cadastrar {
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: 700;
+    color: #11998E;
+    background-color: white;
+    width: 211px;
+    height: 50px;
+}
+.btn-cadastrar2 {
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: 700;
+    color: white;
+    background-color: #11998E;
+    width: 211px;
+    height: 50px;
+}
+
+.survivorclass{
+font-family: Fredoka One;
+font-style: normal;
+font-weight: normal;
+font-size: 74;
+line-height: 107.4%;
+text-align: center;
+text-transform: uppercase;
+color: #FFFFFF;
+text-shadow: 0px 9.47237px 9.47237px rgba(0, 0, 0, 0.25);
+-webkit-text-stroke-width: 5px; /* largura da borda */
+-webkit-text-stroke-color: #11998E; /* cor da borda */}
+
+
+.btn-link {
+    font-weight: normal;
+    color: white;
+    transition: .4s;
+}
+
+.btn-link:hover {
+    transition: .4s;
+    color: #7FFFA0;
+}
+
+.hellotext {
+    color: #11998E;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 42px;
+    letter-spacing: 0.01em;
+}
+
+.idiomas-text {
+    text-align: center;
+    justify-content: center;
+}
+
+@media(min-width: 991px){
+    .banderias {
+        margin: 100 !important;
+    }
+}
+
+@media(max-width:991px) {
+
+  
+    .hellotext {
+        text-align: center;
+        font-size: 30px;
+    }
+    .chamada2text,
+    .chamada2sub,
+    .btndiv {
+        text-align: center !important;
+    }
+    .chamadatext {
+        font-size: 25px !important;
+    }
+    .chamada2text {
+        font-size: 38px !important;
+    }
+    .chamadatextprincipal {
+        font-size: 30px !important;
+    }
+    .chamada2sub {
+        font-size: 30px !important;
+    }
+    .idiomas-text {
+        font-size: 40px !important;
+    }
+}
+
+@media(max-width:675px) {
+    .hellotext {
+        font-size: 20px;
+    }
+}
+
+.idiomas {
+    background-color: #11998E !important;
+}
+
+.idiomas-text {
+    padding: 20px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 56px;
+    letter-spacing: 0.01em;
+    color: white;
+}
+
+.bandeiras {
+    flex-wrap: wrap;
+    pointer-events: none;
+    margin: 20px;
+    padding: 20px;
+    width: 300px
+}
+
+@media (max-width: 991px){
+.bandeiras{
+    margin: 0px !important;
+}
+}
+
+.chamada {
+    background: white;
+    background-image: url("../img/mapa.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.chamadatext {
+    text-align: center;
+    color: #11998E;
+    font-size: 36px;
+    font-weight: 400;
+    max-width: 1203px;
+}
+
+.chamadatextprincipal {
+    text-align: center;
+    color: #11998E;
+    font-size: 36px;
+    font-weight: 800;
+}
+
+.chamada1{
+    padding: 70px;
+    background: white;
+    background-image: url("../img/mapa.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.chamada1 h1{
+    font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 48px;
+line-height: 56px;
+text-align: center;
+letter-spacing: 0.01em;
+
+color: #007B71;
+}
+
+.chamada1 h2{
+    font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+font-size: 45px;
+line-height: 53px;
+text-align: center;
+letter-spacing: 0.01em;
+
+color: #002B27;
+}
+
+.chamada1 img{
+    width: 600px;
+}
+
+.chamada2text {
+    text-align: end;
+    line-height: 1.2;
+    color: white;
+    font-size: 48px;
+    font-weight: 800;
+}
+
+.chamada2sub {
+    line-height: 1.2;
+    color: white;
+    font-size: 36px;
+    font-weight: 400;
+    text-align: end;
+}
+
+.chamada2 {
+    color: black;
+    background: #11998E;
+}
+
+.btndiv {
+    padding: 20px 0;
+    text-align: end;
+}
+
+.parceiros {
+    background-color: white;
+}
+
+.parceirosfont {
+   
+text-transform: uppercase;
+    font-family: Signika Negative;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 44px;
+    letter-spacing: 0.01em;
+    
+    color: #A7A7A7;
+}
+
+
+.footer{
+    padding: 30px;
+    display:flex;
+    justify-content:center;
+    text-align:center;
+    align-items:center;
+    background: #11998E;
+}
+
+.footer h1 {
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.tam {
+    flex-wrap: wrap;
+    max-width: 600px;
+}
+
+.navbar-toggler {
+    background: white;
+}
